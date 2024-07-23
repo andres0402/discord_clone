@@ -1,0 +1,37 @@
+---
+const serverImages = [
+    {
+        id: 1,
+        img: "https://cdn.discordapp.com/icons/539208165028528130/a_cde8806db24764d78e45aa35d3df87b3.webp?size=96"
+    },
+    {
+        id: 2,
+        img: "https://cdn.discordapp.com/icons/662267976984297473/39128f6c9fc33f4c95a27d4c601ad7db.webp?size=96"
+    },
+    {
+        id: 3,
+        img: "https://cdn.discordapp.com/icons/701444109667270656/321a3500dd3f9c71bdcc9101e4e764ed.webp?size=96"
+    },
+    {
+        id: 4,
+        img: "https://cdn.discordapp.com/icons/303181206462136330/577866af287f2cd19faaa4ca574d3850.webp?size=96"
+    }
+	
+]
+---
+<aside class="flex flex-col items-center bg-zinc-800 h-screen">
+    <a href="/" class="my-2 mx-2 bg-[#5865F2] rounded-full h-[52px] w-[52px] flex justify-center items-center hover:scale-105 hover:rounded-2xl transition-transform">
+        <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" width="30" height="30" color="white" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M19.73 4.87a18.2 18.2 0 0 0-4.6-1.44c-.21.4-.4.8-.58 1.21-1.69-.25-3.4-.25-5.1 0-.18-.41-.37-.82-.59-1.2-1.6.27-3.14.75-4.6 1.43A19.04 19.04 0 0 0 .96 17.7a18.43 18.43 0 0 0 5.63 2.87c.46-.62.86-1.28 1.2-1.98-.65-.25-1.29-.55-1.9-.92.17-.12.32-.24.47-.37 3.58 1.7 7.7 1.7 11.28 0l.46.37c-.6.36-1.25.67-1.9.92.35.7.75 1.35 1.2 1.98 2.03-.63 3.94-1.6 5.64-2.87.47-4.87-.78-9.09-3.3-12.83ZM8.3 15.12c-1.1 0-2-1.02-2-2.27 0-1.24.88-2.26 2-2.26s2.02 1.02 2 2.26c0 1.25-.89 2.27-2 2.27Zm7.4 0c-1.1 0-2-1.02-2-2.27 0-1.24.88-2.26 2-2.26s2.02 1.02 2 2.26c0 1.25-.88 2.27-2 2.27Z" class=""></path></svg>
+    </a>
+    <hr class="border-zinc-700 border-2 rounded-xl w-7"/>
+    {serverImages.map(img => (
+        <a href={`${img.id}`} class="my-2 mx-2 hover:scale-105 transition-transform">
+            <img src={img.img} alt="Imagen server" class="rounded-full hover:rounded-2xl"/>
+        </a>
+    ))}
+
+    <hr class="border-zinc-700 border-2 w-7"/>
+    <a href="https://discord.com" target="_blank" class="rounded-full my-2 mx-1 bg-zinc-600 h-[52px] w-[52px] flex justify-center items-center hover:bg-green-500 hover:rounded-2xl transition ease-in-out">
+        <svg class="circleIcon_db6521" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" color="green" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a1 1 0 0 1 1 1v10.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V3a1 1 0 0 1 1-1ZM3 20a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2H3Z" class=""></path></svg>
+    </a>
+</aside>
