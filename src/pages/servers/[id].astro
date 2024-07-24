@@ -1,5 +1,41 @@
 ---
+import ServerAside from "../../components/ServerAside.astro"
+import ServerContent from "../../components/ServerContent.astro"
+import Layout from "../../layouts/Layout.astro"
+
 const { id } = Astro.params
+
+const servers = [
+    {
+        id: 1,
+        title: "IlloJuan City",
+        img: "	https://cdn.discordapp.com/banners/539208165028528130/5704bc9a3c2b529bfc59bf5b6073990c.webp?size=240"
+    },
+    {
+        id: 2,
+        title: "Midjourney",
+        img: "	https://cdn.discordapp.com/banners/662267976984297473/63249e6867f276efc07d32793b7b3b5a.webp?size=240"
+    },
+    {
+        id: 3,
+        title: "Ibai",
+        img: ""
+    },
+    {
+        id: 4,
+        title: "Karlitoss",
+        img: ""
+    }
+	
+]
+
+const currentServer = servers.find(server => server.id.toString() === id)
+
 ---
 
-<h1>{`Detalle del usuario ${id}`}</h1>
+<Layout title=`Discord | ${currentServer.title}`>
+    <main class="grid grid-cols-[240px_1fr]">
+        <ServerAside title={currentServer.title} img={currentServer.img}/>
+        <ServerContent title={currentServer.title}/>
+	</main>
+</Layout>

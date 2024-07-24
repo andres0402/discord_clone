@@ -1,0 +1,40 @@
+---
+import UserControls from './UserControls.astro';
+import { VoiceChannels } from './VoiceChannels';
+
+interface Props{
+    title: string;
+    img: string;
+}
+
+const { title , img } = Astro.props
+---
+
+
+
+<aside class="bg-[#36393e] flex flex-col justify-between h-screen">
+    <div>
+        <div class="relative">
+            <img src={img || ""} class="" height="135px"/>
+            <div class=`flex flex-row items-center ${img ? 'absolute left-3 top-2' : 'ml-3 my-2'}`>
+                <div class="flex flex-row gap-2 items-center">
+                    <svg class="flowerStar_c91f7d" aria-hidden="true" role="img" color="green" width="16" height="16" viewBox="0 0 16 15.2"><path fill="var(--green-360)" fill-rule="evenodd" d="m16 7.6c0 .79-1.28 1.38-1.52 2.09s.44 2 0 2.59-1.84.35-2.46.8-.79 1.84-1.54 2.09-1.67-.8-2.47-.8-1.75 1-2.47.8-.92-1.64-1.54-2.09-2-.18-2.46-.8.23-1.84 0-2.59-1.54-1.3-1.54-2.09 1.28-1.38 1.52-2.09-.44-2 0-2.59 1.85-.35 2.48-.8.78-1.84 1.53-2.12 1.67.83 2.47.83 1.75-1 2.47-.8.91 1.64 1.53 2.09 2 .18 2.46.8-.23 1.84 0 2.59 1.54 1.3 1.54 2.09z"></path></svg>
+                    <p class="text-white font-semibold">{title || "Servidor"}</p>
+                </div>
+            </div>
+            {!img && (
+                <hr class="border-zinc-800"/>
+            )}
+        </div>
+        <a href="/">
+            <div class="flex flex-row gap-1 my-3 mx-3 px-1 py-1 hover:bg-zinc-500 rounded-md group">
+                <svg class="icon_d8bfb3" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" color="grey" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M7 1a1 1 0 0 1 1 1v.75c0 .14.11.25.25.25h7.5c.14 0 .25-.11.25-.25V2a1 1 0 1 1 2 0v.75c0 .14.11.25.25.25H19a3 3 0 0 1 3 3 1 1 0 0 1-1 1H3a1 1 0 0 1-1-1 3 3 0 0 1 3-3h.75c.14 0 .25-.11.25-.25V2a1 1 0 0 1 1-1Z" class=""></path><path fill="currentColor" fill-rule="evenodd" d="M2 10a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v9a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9Zm3.5 2a.5.5 0 0 0-.5.5v3c0 .28.22.5.5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3Z" clip-rule="evenodd" class=""></path></svg>
+                <p class="text-zinc-400 group-hover:text-white">Eventos</p>
+            </div>
+        </a>
+        <hr class="border-zinc-600"/>
+        <VoiceChannels title="CANALES DE TEXTO"/>
+        <VoiceChannels title="CANALES DE VOZ"/>
+    </div>
+    <UserControls/>
+</aside>
